@@ -1,0 +1,97 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Container principal usando CSS Grid */
+.container {
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "banner banner banner"
+        "left main right"
+        "low low low"
+        "footer footer footer";
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-gap: 10px;
+    padding: 10px;
+    flex: 1;
+}
+
+/* Estilos para cada área */
+header {
+    grid-area: header;
+    background-color: #5320A6;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.banner {
+    grid-area: banner;
+    background-color: #00B8FF;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.left-aside {
+    grid-area: left;
+    background-color: #8A2BE2;
+    color: white;
+    padding: 20px;
+}
+
+.main-content {
+    grid-area: main;
+    background-color: #FF00FF;
+    color: white;
+    padding: 20px;
+}
+
+.right-aside {
+    grid-area: right;
+    background-color: #00FF9D;
+    color: white;
+    padding: 20px;
+}
+
+.low-content {
+    grid-area: low;
+    background-color: #0D324D;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #333333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        grid-template-areas:
+            "header"
+            "banner"
+            "left"
+            "main"
+            "right"
+            "low"
+            "footer";
+        grid-template-columns: 1fr;
+    }
+}
